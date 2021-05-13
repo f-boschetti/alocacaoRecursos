@@ -17,10 +17,9 @@ category.addEventListener("change", function(evt) {
 	document.querySelector('.quantityColumn').style.display = "block";
 	document.querySelector('.roomNumberColumn').style.display = "none";
     }
-    
 })
 
-   
+
 
 
 
