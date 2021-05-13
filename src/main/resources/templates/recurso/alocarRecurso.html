@@ -1,0 +1,40 @@
+<html> 
+    <head>
+	<meta charset="utf-8">
+	<title>Alocar Recurso</title>
+	<script src="../../../js/menu.js"></script>
+    </head> 
+    
+    <body> 
+	<br/><br/><br/><br/>
+	<div class="container">
+
+	    <div class="card">
+		<div class="card-body">
+		    <div class="row">
+			<div class="col">
+			    <h5>Recurso escolhido:</h5>
+			</div>
+			<div class="col">
+			    <h5 class="recursoNome" style="margin-left: -120px;"></h5>
+			</div>		 
+			<div class="col">
+			    <h5>Quantidade disponível:</h5>
+			</div>
+			<div class="col">
+			    <h5 class="recursoQuantidade" style="margin-left: -90px;"></h5>
+			</div>
+		    </div>
+		</div>
+	    </div><br/><br/>
+	    <div class="row">
+		<div class="col quantityColumn" >
+		    <h5>Quantos deseja alocar ?</h5>
+		    <input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control" style="width: 200px">
+		</div>
+	    </div><br/><br/>
+	    <button type="submit" class="btn btn-primary" onClick="sucessoAlocacao()">Alocar recurso</button>
+	</div>
+	<script src="../../../js/alocarRecurso.js"></script>
+    </body>  
+</html>
