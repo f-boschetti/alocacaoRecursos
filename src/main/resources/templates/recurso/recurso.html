@@ -5,24 +5,30 @@
 	<link rel="stylesheet" type="text/css" href="../../../css/recurso.css">
 	<script src="../../../js/menu.js"></script>
     </head> 
-    
     <body>
 	<div class="container">
 	    <br/><br/><br/><br/>
-
 	    <div class="transferirRecurso hidden">
 		<div class="row">
 		    <div class="col-3">
-			Função
+			<h5>Função</h5>
 			<select class="form-select dropdownPositionOption" aria-label="Default select example">
 			    <option value="1">Aluno</option>
 			    <option value="2">Funcionário</option>
 			</select>
 		    </div>
-		    <div class="col">
-			
+		    <div class="col-3 matriculaColumn" >
+			<h5>Matrícula do destinatário</h5>
+			<input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control">
 		    </div>
-		</div>
+		    <div class="col quantityColumn hidden">
+			<h5>Quantidade</h5>
+			<input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control" style="width: 150px">
+		    </div>
+		    <div class="col">
+			<button type="button" class="btn btn-primary" style="margin-top: 30px;">Transferir</button>
+		    </div>
+		</div>		
 		<br/><br/><br/><br/>
 	    </div>
 	    <table class="table">
