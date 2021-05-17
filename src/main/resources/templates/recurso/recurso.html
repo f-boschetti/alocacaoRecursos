@@ -1,0 +1,59 @@
+<html> 
+    <head>
+	<meta charset="utf-8">
+	<title>Seus Recursos</title>
+	<link rel="stylesheet" type="text/css" href="../../../css/recurso.css">
+	<script src="../../../js/menu.js"></script>
+    </head> 
+    <body>
+	<div class="container">
+	    <br/><br/><br/><br/>
+	    <div class="transferirRecurso hidden">
+		<div class="row">
+		    <div class="col-3">
+			<h5>Função</h5>
+			<select class="form-select dropdownPositionOption" aria-label="Default select example">
+			    <option value="1">Aluno</option>
+			    <option value="2">Funcionário</option>
+			</select>
+		    </div>
+		    <div class="col-3 matriculaColumn" >
+			<h5>Matrícula do destinatário</h5>
+			<input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control">
+		    </div>
+		    <div class="col quantityColumn hidden">
+			<h5>Quantidade</h5>
+			<input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control" style="width: 150px">
+		    </div>
+		    <div class="col">
+			<button type="button" class="btn btn-primary" style="margin-top: 30px;">Transferir</button>
+		    </div>
+		</div>		
+		<br/><br/><br/><br/>
+	    </div>
+	    <table class="table">
+		<thead>
+		    <tr>
+			<th scope="col">Recurso</th>
+			<th scope="col">Quantidade / Tempo alocação</th>
+			<th scope="col">Horário estimado para a devolução</th>
+			<th scope="col">Ações</th>
+		    </tr>
+		</thead>
+		<tbody>
+		    <!--deve ser preenchido com os dados no banco -->
+		    <tr>
+			<td>Pincéis</td>
+			<td>7</td>
+			<td>14:30</td>
+			<td>
+			    <button type="button" class="btn btn-info btn-sm" onClick="compartilharRecurso()">Compartilhar</button>
+			    <button type="button" class="btn btn-warning btn-sm" onClick="trocarResponsavel()">Trocar Responsável</button>
+			</td>
+		    </tr>
+		</tbody>
+	    </table>
+	</div>
+	<script src="../../../js/recurso.js"></script>
+    </body>
+</html>

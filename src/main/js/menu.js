@@ -7,11 +7,10 @@ document.write('\
 			<div class="navbar-nav">\
 			    <a class="nav-link" href="../recurso/cadastraRecurso.html">Cadastrar Recurso</a>\
 			    <a class="nav-link" href="../recurso/categoria.html">Categorias</a>\
-			    <a class="nav-link" href="#">Fila de espera</a>\
-			    <a class="nav-link" href="#">Compartilhar</a>\
-			    <a class="nav-link" href="#">Trocar respnsável</a>\
-			    <a class="nav-link" href="#">Histórico</a>\
-			    <a class="nav-link" href="#">Denuncia</a>\
+			    <a class="nav-link" href="../recurso/filaEspera.html">Fila de espera</a>\
+			    <a class="nav-link" href="../recurso/recurso.html">Seus Recursos</a>\
+			    <a class="nav-link" href="../recurso/historico.html">Histórico</a>\
+			    <a class="nav-link" href="../recurso/denuncia.html">Denuncia</a>\
 			</div>\
 		    </div>\
 		</div>\
