@@ -22,7 +22,7 @@ public class Recurso {
 	// locação se daria item a item, assim daria pra gerenciar os itens um a um
 	private Long quantidade;
 
-	// pode ser um enum "tipo"
+	// Descrição
 	private String tipo;
 	// acho que esses dois poderiam ser a mesma coisa talvez?!
 	@Enumerated(EnumType.STRING)

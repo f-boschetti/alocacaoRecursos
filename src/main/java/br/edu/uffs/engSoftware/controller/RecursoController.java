@@ -35,5 +35,25 @@ public class RecursoController {
 	public String cadastraRecurso() {
 		return "recurso/cadastraRecurso";
 	}
+	
+	@GetMapping("/categoria")
+	public String listaCategoria() {
+		return "recurso/categoria";
+	}
+	
+	@GetMapping("/filaDeEspera")
+	public String filaDeEspera() {
+		return "recurso/filaEspera";
+	}
+	
+	@GetMapping("/historico")
+	public String historicoRecurso() {
+		return "recurso/historico";
+	}
+	
+	@GetMapping("/recurso")
+	public String recurso() {
+		return "recurso/recurso";
+	}
 
 }

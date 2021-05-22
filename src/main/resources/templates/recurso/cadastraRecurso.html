@@ -1,59 +1,61 @@
 <!DOCTYPE html>
 <html>
-    <head>
-	<title>Cadastrar Recurso</title>
-	<meta charset="utf-8">
-	<script src="../../../js/menu.js"></script>
-    </head>
-    <body>
+<head>
+<title>Cadastrar Recurso</title>
+<meta charset="utf-8">
+<script src="../../../js/menu.js"></script>
+</head>
+<body>
 	<div class="container">
-	    <!-- <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-		 <div class="container-fluid">
-		 <div class="collapse navbar-collapse">
-		 <div class="navbar-nav">
-		 <a class="nav-link active" aria-current="page" href="#">Cadastrar Recurso</a>
-		 <a class="nav-link" href="#">Categorias</a>
-		 <a class="nav-link" href="#">Fila de espera</a>
-		 <a class="nav-link" href="#">Compartilhar</a>
-		 <a class="nav-link" href="#">Trocar respnsável</a>
-		 <a class="nav-link" href="#">Histórico</a>
-		 <a class="nav-link" href="#">Denuncia</a>
-		 </div>
-		 </div>
-		 </div>
-		 </nav> -->
-	    
-	    <!-- formulário de cadastro de recurso -->
-	    </br></br></br></br>
-	    <div class="row">
-		<div class="col">
-		    <h5>Categoria que irá pertencer</h5>
-	            <select class="form-select dropdownCategoryOption" aria-label="Default select example" style="width: 300px">
-			<option value="1">Material</option>
-			<option value="2">Salas</option>
-			<option value="3">Eletrônicos</option>
-		    </select>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse">
+					<div class="navbar-nav">
+						<a class="nav-link" href="#">Categorias</a>
+						<a class="nav-link" href="#">Fila de espera</a>
+						<a class="nav-link" href="#">Denuncia</a>
+						<a class="nav-link active" aria-current="page" href="#">Cadastrar Recurso</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+
+		<!-- formulário de cadastro de recurso -->
+		<div class="row">
+			<div class="col">
+				<h5>Categoria que irá pertencer</h5>
+				<select class="form-select dropdownCategoryOption"
+					aria-label="Default select example" style="width: 300px">
+					<option value="1">Material</option>
+					<option value="2">Salas</option>
+					<option value="3">Eletrônicos</option>
+				</select>
+			</div>
+			<div class="col">
+				<h5>Nome</h5>
+				<input onkeypress="return /[a-z]/i.test(event.key)" type="text"
+					class="form-control" style="width: 300px">
+			</div>
+			<div class="col quantityColumn">
+				<h5>Quantidade</h5>
+				<input onkeypress="return /[0-9]/i.test(event.key)" type="text"
+					class="form-control" style="width: 150px">
+			</div>
+			<div class="col roomNumberColumn">
+				<h5>Nº da sala</h5>
+				<input onkeypress="return /[0-9]/i.test(event.key)" type="text"
+					class="form-control" style="width: 100px">
+			</div>
 		</div>
-		<div class="col">
-		    <h5>Nome</h5>
-		    <input onkeypress="return /[a-z]/i.test(event.key)" type="text" class="form-control" style="width: 300px">
+		<div class="form-floating">
+			<textarea class="form-control" placeholder="Descrição do recurso"
+				style="height: 100px"></textarea>
+			<label for="floatingTextarea">Insira alguma descrição sobre
+				este recurso</label>
 		</div>
-		<div class="col quantityColumn" >
-		    <h5>Quantidade</h5>
-		    <input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control" style="width: 150px">
-		</div>
-		<div class="col roomNumberColumn" >
-		    <h5>Nº da sala</h5>
-		    <input onkeypress="return /[0-9]/i.test(event.key)" type="text" class="form-control" style="width: 100px">
-		</div>
-	    </div></br>
-	    <div class="form-floating">
-		<textarea class="form-control" placeholder="Descrição do recurso" style="height: 100px"></textarea>
-		<label for="floatingTextarea">Insira alguma descrição sobre este recurso</label>
-	    </div></br></br>	    
-	    <button type="submit" class="btn btn-primary">Salvar recurso</button>
+		<button type="submit" class="btn btn-primary">Salvar recurso</button>
 	</div>
-	
+
 	<script src="../../../js/cadastrarRecurso.js"></script>
-    </body>
+</body>
 </html>
