@@ -1,9 +1,12 @@
 package br.edu.uffs.engSoftware.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 
 /**
@@ -13,12 +16,15 @@ import javax.persistence.Id;
  *	id gerado pelo banco
  */
 @Entity
-public class Denuncia {
+public class Denuncia implements Serializable{
+
+	private static final long serialVersionUID = -5262506417478212932L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
 
+	@NotBlank
 	private String denuncia;
 	
 	public Denuncia() {

@@ -1,5 +1,6 @@
 package br.edu.uffs.engSoftware.model;
 
+import java.io.Serializable;
 import java.util.Set;
 
 import javax.persistence.Entity;
@@ -22,7 +23,9 @@ import javax.persistence.OneToMany;
  * 		tabela de join é a escrita ali
  */
 @Entity
-public class Usuario {
+public class Usuario implements Serializable{
+
+	private static final long serialVersionUID = -1693433034992294075L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)

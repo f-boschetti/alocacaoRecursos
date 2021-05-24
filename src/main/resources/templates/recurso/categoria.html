@@ -7,43 +7,58 @@
 	<script src="../../../js/menu.js"></script>
     </head> 
     
-    <body>	
-      	<br/><br/><br/><br/>
+    <body>
 	<div class="container">
-
-	    <div class="row">
-		<div class="col">
-		    <h5>Escolha uma categoria</h5>
-		<select class="form-select dropdownCategoryOption" aria-label="Default select example" style="width: 300px">
-		    <option value="1">Material</option>
-		    <option value="2">Salas</option>
-		    <option value="3">Eletrônicos</option>
-		</select><br/><br/><br/>
-		</div>
-		<div class="col" style="margin-left: -200px;">
-		    <!-- isso tem que ser substituido pelo os dados do banco -->
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		    <a href="../recurso/alocarRecurso.html" class="categoriaRecurso btn btn-success"> Recurso </a>
-		</div>
-	    </div>
+	
+		<nav style="margin-bottom:30px;" class="navbar navbar-expand-lg navbar-dark bg-primary">
+			<div class="container-fluid">
+				<div class="collapse navbar-collapse">
+					<div class="navbar-nav">
+						<a class="nav-link active disabled">Categorias</a>
+						<a th:attr="href='filaDeEspera'" class="nav-link">Fila de espera</a>
+						<a th:attr="href='../denuncia/registrarDenuncia'" class="nav-link" >Denuncia</a>
+						<a th:attr="href='cadastraRecurso'" class="nav-link" aria-current="page">Cadastrar Recurso</a>
+					</div>
+				</div>
+			</div>
+		</nav>
+		<form action="">
+		    <div class="row">
+				<div class="col">
+				    <h5>Escolha uma categoria</h5>
+					<select class="form-select dropdownCategoryOption" name="categoria" aria-label="Default select example" style="width:300px; margin-bottom:10px;">
+				   		<option value="1">Materiais</option>
+				    	<option value="2">Salas</option>
+				    	<option value="3">Eletrônicos</option>
+					</select>
+					<button type="submit" class="btn btn-primary">Buscar</button>
+				</div>
+		    </div>
+		</form>
+		
+		<table class="table">
+			<thead class="thead-light">
+				<tr>
+					<th>Categoria</th>
+					<th>Nome</th>
+					<th>Quantidade Disponivel</th>
+					<td>Descrição</td>
+					<td></td>
+				</tr>
+			</thead>
+			 <tbody>
+			 	<tr th:each="item: ${listaDeItens}">
+			 		<td style="width:10%;" th:text="${item.categoria}"/>
+			 		<td th:text="${item.nome}"/>
+			 		<td style="width:15%;" th:text="${item.quantidade}"/>
+			 		<td style="width:40%;" th:text="${item.tipo}"/>
+			 		<td style="width:5%;">
+			 			<a th:attr="href='alocarRecurso/'+${item.id}"><button class="btn btn-primary">Alocar</button></a>
+			 		</td>
+			 	</tr>
+			 </tbody>
+		</table>
+		
 	</div>
     </body>  
 </html>

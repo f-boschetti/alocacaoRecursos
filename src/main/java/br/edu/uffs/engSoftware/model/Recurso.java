@@ -1,16 +1,22 @@
 package br.edu.uffs.engSoftware.model;
 
+import java.io.Serializable;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
+import br.edu.uffs.engSoftware.dao.RecursoDao;
 import br.edu.uffs.engSoftware.enums.Categoria;
 
 @Entity
-public class Recurso {
+public class Recurso implements Serializable {
+
+	private static final long serialVersionUID = -4312987863539005148L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
@@ -18,13 +24,10 @@ public class Recurso {
 
 	private String nome;
 
-	// o que também pode ser feito é colocar isso como "recursoDisponivel" e a
-	// locação se daria item a item, assim daria pra gerenciar os itens um a um
 	private Long quantidade;
 
-	// Descrição
 	private String tipo;
-	// acho que esses dois poderiam ser a mesma coisa talvez?!
+
 	@Enumerated(EnumType.STRING)
 	private Categoria categoria;
 
@@ -37,6 +40,15 @@ public class Recurso {
 		this.quantidade = quantidade;
 		this.tipo = tipo;
 		this.categoria = categoria;
+	}
+
+	public static Recurso transformaRecurso(RecursoDao recurso) {
+		Recurso recursoReturn = new Recurso();
+		recursoReturn.setCategoria(Categoria.getCategoriaByCodigo(recurso.getCategoria()));
+		recursoReturn.setNome(recurso.getNome());
+		recursoReturn.setQuantidade(recurso.getQuantidade());
+		recursoReturn.setTipo(recurso.getTipo());
+		return recursoReturn;
 	}
 
 	public Long getId() {

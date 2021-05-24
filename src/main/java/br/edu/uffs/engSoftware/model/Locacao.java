@@ -1,5 +1,6 @@
 package br.edu.uffs.engSoftware.model;
 
+import java.io.Serializable;
 import java.time.LocalDateTime;
 
 import javax.persistence.Entity;
@@ -19,7 +20,9 @@ import javax.persistence.OneToOne;
  * 
  */
 @Entity
-public class Locacao {
+public class Locacao implements Serializable{
+
+	private static final long serialVersionUID = 8774707000230206079L;
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
