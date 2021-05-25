@@ -18,8 +18,8 @@ public class DenunciaController {
 	private DenunciaRepository denunciaRepository;
 	
 	@GetMapping("/registrarDenuncia")
-	public String registraDenuncia(@Valid String textoDenuncia) {
-		if (textoDenuncia.length() != 0 && textoDenuncia.replaceAll(" ", "").length() != 0) {
+	public String registraDenuncia(String textoDenuncia) {
+		if (textoDenuncia != null &&textoDenuncia.length() != 0 && textoDenuncia.replaceAll(" ", "").length() != 0) {
 			Denuncia denuncia = new Denuncia();
 			denuncia.setDenuncia(textoDenuncia);
 			denunciaRepository.save(denuncia);
