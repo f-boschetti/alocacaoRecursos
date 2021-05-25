@@ -1,5 +1,9 @@
 package br.edu.uffs.engSoftware.dao;
 
+/**
+ * Pattern DAO significa "Objeto de Acesso a Dados", usado para transferir dados entre a View e o controller de forma mais facil
+ */
+
 public class RecursoDao {
 
 	private String nome;

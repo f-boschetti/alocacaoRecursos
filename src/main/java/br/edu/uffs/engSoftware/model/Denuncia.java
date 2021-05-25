@@ -11,9 +11,9 @@ import javax.validation.constraints.NotBlank;
 
 /**
  * @author felip 
- *	Todas essas classes .model são as representaçoes em objetos na tabela do banco de dados
- *	
- *	id gerado pelo banco
+ *	Todas essas classes Xyz no pacote .model são as representaçoes em objetos na tabela do banco de dados
+ *	Literalmente são elas que dizem o que deve estar no banco, se algo mudar aqui, vai mudar no banco
+ *	Id gerado pelo banco
  */
 @Entity
 public class Denuncia implements Serializable{

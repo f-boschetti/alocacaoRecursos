@@ -3,8 +3,7 @@ package br.edu.uffs.engSoftware.enums;
 import javax.swing.text.StyledEditorKit.ForegroundAction;
 
 /**
- * @author felip
- * 
+ * Categoria ao qual o recurso vai pertencer
  */
 
 public enum Categoria {

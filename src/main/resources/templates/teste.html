@@ -9,10 +9,10 @@
 	Vc abre o html dentro de src/main/resources e também a classe RecursoController pra entender a explicação
 	funciona assim: 
 		1° tem que saber que e xiste o Thymeleaf é tipo quando vc coloca uma classe numa tag HTML, esse Thymeleaf pega tudo que estiver nas tags dele e manda pro servidor interpretar,
-		 depois o servidor cospe o HTML interpretado, então, se vc olhar o html da pagina, vai ser só um html normal
+		 depois o servidor cospe o HTML interpretado, então, se vc olha o html da pagina, vai ser só um html normal, o que deixa todo o esforço com o servidor e não exigindo nada dos computadores as vezes antigos de escolas
 		 
 		 2° vc olha no RecursoController o metodo  hello:
-		 	Ele tem uma anotação GetMapping("/explicacao") que NÃO por acaso é a URL que vc está vendo, no caso, RecursoController tem uma anotacao dessas e o metodo tem outro,
+		 	Ele tem uma anotação @RequestMapping("/explicacao") que NÃO por acaso é a URL que vc está vendo, no caso, RecursoController tem uma anotacao dessas e o metodo tem outro,
 		 	aí a url fica 'recurso/explicacao' então esse get mapping "pega a tua url e manda o controlador fazer algo"
 		 	O request que que tem no metodo o spring se encarrega de colocar lá, e é ele que vc usa pra trazer os objetos pra view,
 		 	 tipo esse texto aqui: <span th:text = "${nomeQueVcQuerUsarNaView}"></span>. na real era "nomeQueVcQuerUsarNaView" só que o thymeleaf pegou esse span e substituiu ele. aí a gente pode usar isso pra passar ogjetos pra view

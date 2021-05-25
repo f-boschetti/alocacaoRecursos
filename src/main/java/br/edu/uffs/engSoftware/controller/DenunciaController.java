@@ -10,6 +10,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import br.edu.uffs.engSoftware.model.Denuncia;
 import br.edu.uffs.engSoftware.repository.DenunciaRepository;
 
+/**
+ * Explicação do que é e para que serve um controller em RecursoController.java
+ */
 @Controller
 @RequestMapping("denuncia")
 public class DenunciaController {

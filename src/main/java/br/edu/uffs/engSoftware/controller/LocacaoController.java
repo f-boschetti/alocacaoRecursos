@@ -16,6 +16,9 @@ import br.edu.uffs.engSoftware.model.Recurso;
 import br.edu.uffs.engSoftware.repository.LocacaoRepository;
 import br.edu.uffs.engSoftware.repository.RecursoRepository;
 
+/**
+ * Explicação do que é e para que serve um controller em RecursoController.java
+ */
 @Controller
 @RequestMapping("locacao")
 public class LocacaoController {
