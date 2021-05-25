@@ -8,19 +8,19 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinTable;
-import javax.persistence.OneToOne;
+import javax.persistence.ManyToOne;
 
 /**
  * @author felip Todas essas classes .model são as representaçoes em objetos na
  *         tabela do banco de dados
- *         
- *         id gerado pelo banco
- *         data e hora da locação
- *         e um recurso (que é o que vai ser alocado) aqui acho que daria pra fazer também um "um pra muitos" de locação para recursos
+ * 
+ *         id gerado pelo banco data e hora da locação e um recurso (que é o que
+ *         vai ser alocado) aqui acho que daria pra fazer também um "um pra
+ *         muitos" de locação para recursos
  * 
  */
 @Entity
-public class Locacao implements Serializable{
+public class Locacao implements Serializable {
 
 	private static final long serialVersionUID = 8774707000230206079L;
 
@@ -30,17 +30,20 @@ public class Locacao implements Serializable{
 
 	private LocalDateTime horarioLocacao;
 
-	@OneToOne
+	private Long quantidadeLocada;
+
+	@ManyToOne
 	@JoinTable(name = "recurso_locado")
 	private Recurso recursoLocado;
-	
-	public Locacao(){
+
+	public Locacao() {
 	}
 
-	public Locacao(Long id, LocalDateTime horarioLocacao, Recurso recursoLocado) {
+	public Locacao(Long id, LocalDateTime horarioLocacao, Long quantidadeLocada, Recurso recursoLocado) {
 		super();
 		this.id = id;
 		this.horarioLocacao = horarioLocacao;
+		this.quantidadeLocada = quantidadeLocada;
 		this.recursoLocado = recursoLocado;
 	}
 
@@ -66,6 +69,14 @@ public class Locacao implements Serializable{
 
 	public void setRecursoLocado(Recurso recursoLocado) {
 		this.recursoLocado = recursoLocado;
+	}
+
+	public Long getQuantidadeLocada() {
+		return quantidadeLocada;
+	}
+
+	public void setQuantidadeLocada(Long quantidadeLocada) {
+		this.quantidadeLocada = quantidadeLocada;
 	}
 
 }

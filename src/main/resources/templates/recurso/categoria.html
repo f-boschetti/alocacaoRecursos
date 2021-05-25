@@ -53,7 +53,7 @@
 			 		<td style="width:15%;" th:text="${item.quantidade}"/>
 			 		<td style="width:40%;" th:text="${item.tipo}"/>
 			 		<td style="width:5%;">
-			 			<a th:attr="href='alocarRecurso/'+${item.id}"><button class="btn btn-primary">Alocar</button></a>
+			 			<a th:attr="href='../locacao/alocarRecurso/?recurso='+${item.id}"><button class="btn btn-primary">Alocar</button></a>
 			 		</td>
 			 	</tr>
 			 </tbody>
